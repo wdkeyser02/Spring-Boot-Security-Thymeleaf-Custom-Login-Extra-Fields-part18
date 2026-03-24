@@ -29,4 +29,5 @@ public record CustomUser(String username, String name, String email, String pass
 	 public boolean isEnabled() {
 	   return enabled();
 	 }
+	 
 }

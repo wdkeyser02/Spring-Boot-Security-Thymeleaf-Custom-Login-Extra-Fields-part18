@@ -21,7 +21,7 @@ public class CustomUserRepository {
 	}
 	
 	public CustomUser findByUsername(String username) {
-        List<CustomAuthorities> customAuthorities = jdbcTemplate.query(sqlAurhorities,  new RowMapper<CustomAuthorities>() {
+		List<CustomAuthorities> customAuthorities = jdbcTemplate.query(sqlAurhorities,  new RowMapper<CustomAuthorities>() {
 			@Override
 			public CustomAuthorities mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return new CustomAuthorities(rs.getString("username"),

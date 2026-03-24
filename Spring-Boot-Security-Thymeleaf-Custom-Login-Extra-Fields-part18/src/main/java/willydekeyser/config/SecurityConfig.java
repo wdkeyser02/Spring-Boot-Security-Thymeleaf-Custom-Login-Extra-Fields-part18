@@ -10,7 +10,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Bean
+	@Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 //.httpBasic(Customizer.withDefaults())
@@ -27,8 +27,7 @@ public class SecurityConfig {
                         .requestMatchers("/", "/public", "/main.css", "/favicon.ico").permitAll()
                         .requestMatchers("/user/**").hasRole("USER")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .anyRequest().authenticated()
-                );
+                        .anyRequest().authenticated());
         return http.build();
     }
 
